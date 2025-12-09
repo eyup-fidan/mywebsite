@@ -22,23 +22,23 @@ export default function Projects() {
     },
     {
       id: 2,
-      imageSrc: "/project2.jpg",
-      title: language === 'en' ? "Task Management Dashboard" : "Görev Yönetim Paneli",
+      imageSrc: "/Fitness&Nutrition.jpg",
+      title: language === 'en' ? "Fitness & Nutrition Tracking App" : "Fitness ve Beslenme Takip Uygulaması",
       description: language === 'en' 
         ? "A productivity tool for teams to track tasks. Includes drag-and-drop functionality and real-time updates."
         : "Takımların görevleri takip etmesi için bir üretkenlik aracı. Sürükle-bırak özelliği ve gerçek zamanlı güncellemeler içerir.",
-      techs: ["React", "Firebase", "Redux"],
+      techs: ["React Native", "Node.js", "PostgreSQL","Supabase","Next.js", "Tailwind CSS", "React"],
       codeLink: "#",
       liveLink: "#"
     },
     {
       id: 3,
-      imageSrc: "/project3.jpg",
-      title: language === 'en' ? "AI Image Generator" : "Yapay Zeka Resim Üretici",
+      imageSrc: "/OnlineEducation.jpg",
+      title: language === 'en' ? "Online Course & Education Platform" : "Online Kurs & Eğitim Platformu",
       description: language === 'en' 
         ? "An AI-powered application that generates images from text prompts using OpenAI API."
         : "OpenAI API kullanarak metin girdilerinden (prompt) görsel üreten yapay zeka destekli bir uygulama.",
-      techs: ["Python", "OpenAI API", "React"],
+      techs: ["TypeScript", "OpenAI API", "Docker","Tailwind CSS","PostgreSQL","PRISMA ORM","Node.js","React Native"],
       codeLink: "#",
       liveLink: "#"
     }
@@ -67,8 +67,6 @@ export default function Projects() {
                  fill
                  quality={100}
                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                 // DÜZELTME: 'object-contain' yerine 'object-cover' yaptık (Alanı doldurur).
-                 // 'object-top' ekli (Resmin en üstünü hizalar).
                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                  onError={(e) => {
                     const target = e.target as HTMLImageElement;

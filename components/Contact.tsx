@@ -1,172 +1,82 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 
 export default function Contact() {
   const { language } = useLanguage();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState({ name: '', email: '' });
-  const [status, setStatus] = useState<null | 'success' | 'error'>(null);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    if (name === 'name') {
-      if (value.length > 16) return;
-      if (value !== '' && !/^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$/.test(value)) return;
-    }
-    if (name === 'email') {
-      if (value.length > 30) return;
-    }
-    setFormData({ ...formData, [name]: value });
-    if (errors[name as keyof typeof errors]) {
-       setErrors({ ...errors, [name]: '' });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let newErrors = { name: '', email: '' };
-    let hasError = false;
-
-    if (!emailRegex.test(formData.email)) {
-      newErrors.email = language === 'en' ? 'Please enter a valid email address.' : 'Lütfen geçerli bir e-posta adresi giriniz.';
-      hasError = true;
-    }
-
-    if (hasError) {
-      setErrors(newErrors);
-      return; 
-    }
-
-    try {
-      const response = await fetch("https://formspree.io/f/mvgeqzzw", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('error');
-    }
-  };
 
   return (
-    <section id="contact" className="py-20 scroll-mt-24">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section id="contact" className="py-20 relative overflow-hidden scroll-mt-24">
+      {/* Arka Plan Dekoru */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+        
+        {/* BÖLÜM BAŞLIĞI */}
         <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="border-b-4 border-blue-500">
+            <span className="border-b-4 border-blue-500 pb-2 text-white">
                 {language === 'en' ? "Contact Me" : "İletişim"}
             </span>
         </h2>
         
-        <div className="bg-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-800">
-          
-          <p className="text-center text-slate-200 mb-8">
-            {language === 'en' 
-             ? "Feel free to reach out to me for any inquiries or collaborations using the form below."
-             : "Herhangi bir soru, iş birliği veya teklif için aşağıdaki formu kullanarak bana ulaşabilirsiniz."
-            }
-          </p>
+        {/* PREMIUM KART */}
+        <div className="relative group">
+            {/* Arkadaki Renkli Çerçeve */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-70 blur transition duration-1000 group-hover:duration-200"></div>
+            
+            {/* Kart İçeriği */}
+            <div className="relative bg-slate-950/90 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-8 md:p-12 text-center overflow-hidden">
+                
+                {/* İç Dekoratif Işıklar */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
 
-          {status === 'success' ? (
-             <div className="text-center p-6 bg-green-500/10 border border-green-500/50 rounded-lg animate-fade-up">
-                <h3 className="text-xl font-bold text-green-400 mb-2">
-                    {language === 'en' ? "Message Sent! " : "Mesaj Gönderildi! "}
+                {/* Yüzen İkon */}
+                <div className="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping opacity-20"></div>
+                    <div className="relative w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50 rounded-full flex items-center justify-center text-blue-400 text-3xl shadow-xl group-hover:scale-110 group-hover:rotate-12 group-hover:text-white group-hover:border-blue-500/50 transition-all duration-500">
+                        <FaPaperPlane />
+                    </div>
+                </div>
+
+                {/* Başlık */}
+                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                    {language === 'en' ? "Let's Build Something Amazing!" : "Harika Bir Şeyler İnşa Edelim!"}
                 </h3>
-                <p className="text-slate-300">
+
+                {/* Açıklama */}
+                <p className="text-slate-300 mb-8 max-w-lg mx-auto text-base leading-relaxed font-light">
                     {language === 'en' 
-                     ? "Thank you for contacting me. I will get back to you as soon as possible."
-                     : "Benimle iletişime geçtiğiniz için teşekkürler. En kısa sürede size dönüş yapacağım."
+                    ? "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out to me."
+                    : "Yeni projeleri, yaratıcı fikirleri veya vizyonunuzun bir parçası olma fırsatlarını görüşmeye her zaman açığım. Benimle iletişime geçmekten çekinmeyin."
                     }
                 </p>
-                <button onClick={() => setStatus(null)} className="mt-4 text-sm text-green-400 hover:underline">
-                    {language === 'en' ? "Send another message" : "Başka bir mesaj gönder"}
-                </button>
-             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                
-                {/* NAME */}
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-slate-300">
-                    {language === 'en' ? "Full Name" : "Ad Soyad"}
-                  </label>
-                  <input 
-                    type="text" 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    required 
-                    className="w-full p-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors placeholder-slate-600" 
-                    placeholder={language === 'en' ? "Name Surname" : "Adınız Soyadınız"} 
-                  />
-                  <p className={`text-xs mt-1 text-right ${formData.name.length === 16 ? 'text-orange-500' : 'text-slate-500'}`}>
-                    {formData.name.length}/16
-                  </p>
+
+                {/* MAILTO BUTONU */}
+                <div className="flex justify-center relative z-10">
+                    <a 
+                    href="mailto:fidaneyup76@gmail.com"
+                    className="group/btn relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-base rounded-xl overflow-hidden shadow-md shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/50 active:scale-95 border border-white/10"
+                    >
+                        <div className="absolute inset-0 w-full h-full bg-white/20 skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                        
+                        <span className="text-lg">
+                            <FaEnvelope />
+                        </span>
+                        <span>fidaneyup76@gmail.com</span>
+                    </a>
                 </div>
 
-                {/* EMAIL */}
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-slate-300">
-                    {language === 'en' ? "Email Address" : "E-posta Adresi"}
-                  </label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    value={formData.email} 
-                    onChange={handleChange} 
-                    required 
-                    className={`w-full p-3 bg-slate-950 border rounded-lg focus:outline-none transition-colors placeholder-slate-600 ${errors.email ? 'border-red-500 focus:border-red-500' : 'border-slate-700 focus:border-blue-500'}`}
-                    placeholder="example@email.com"
-                  />
-                  <div className="flex justify-between mt-1">
-                     <span className="text-xs text-red-500 h-4">{errors.email}</span>
-                     <span className={`text-xs ${formData.email.length === 30 ? 'text-orange-500' : 'text-slate-500'}`}>
-                        {formData.email.length}/30
-                     </span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* MESSAGE */}
-              <div>
-                <label className="block text-sm font-medium mb-2 text-slate-300">
-                    {language === 'en' ? "Your Message" : "Mesajınız"}
-                </label>
-                <textarea 
-                  name="message" 
-                  rows={5} 
-                  value={formData.message} 
-                  onChange={handleChange} 
-                  required 
-                  // DEĞİŞİKLİK BURADA: 'resize-none' eklendi.
-                  className="w-full p-3 bg-slate-950 border border-slate-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors placeholder-slate-600 resize-none" 
-                  placeholder={language === 'en' ? "Write your message here..." : "Mesajınızı buraya yazın..."}
-                ></textarea>
-              </div>
-
-              <div className="flex justify-center">
-                <button type="submit" className="px-10 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/30">
-                  {status === 'error' 
-                    ? (language === 'en' ? "Failed, Try Again" : "Hata, Tekrar Dene") 
-                    : (language === 'en' ? "Send Message" : "Mesaj Gönder")
-                  }
-                </button>
-              </div>
-            </form>
-          )}
+                {/* Alt Not */}
+                <p className="mt-6 text-slate-500 text-xs font-medium">
+                    {language === 'en' 
+                    ? "Click the button above to send me an email directly." 
+                    : "Doğrudan e-posta göndermek için butona tıklayın."
+                    }
+                </p>
+            </div>
         </div>
       </div>
     </section>

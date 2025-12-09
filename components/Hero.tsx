@@ -13,7 +13,7 @@ export default function Hero() {
       
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20">
         
-        {/* SOL TARA: Metin Alanı */}
+        {/* SOL TARAF: Metin Alanı */}
         <div className="flex-1 text-center md:text-left z-10">
           <h2 className="text-2xl md:text-3xl text-blue-400 font-medium mb-4 animate-fade-up delay-100">
             {language === 'en' ? "Hello, I'm Eyüp " : "Merhaba, Ben Eyüp "}
@@ -28,12 +28,12 @@ export default function Hero() {
 
           <p className="text-slate-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed animate-fade-up delay-300">
             {language === 'en' 
-              ? "I am a Computer Engineer and Frontend Developer who bridges the gap between complex engineering logic and elegant user interfaces. I create scalable, user-friendly solutions grounded in modern software architectures and engineering principles. Focused on crafting seamless digital experiences, I enjoy bringing static designs to life with fluid animations and responsive layouts. I am a lifelong learner and follow technology with passion, constantly refining my skills to build the web of tomorrow."
-              : "Karmaşık mühendislik mantığı ile zarif kullanıcı arayüzleri arasında köprü kuran bir Bilgisayar Mühendisi ve Frontend Geliştiricisiyim. Modern yazılım mimarileri ve mühendislik prensiplerine dayalı, ölçeklenebilir ve kullanıcı dostu çözümler üretiyorum. Akıcı dijital deneyimler tasarlamaya odaklanarak, statik tasarımları akıcı animasyonlar ve duyarlı düzenlerle hayata geçirmekten keyif alıyorum. Teknolojiyi tutkuyla takip eden, yarının web dünyasını inşa etmek için becerilerini sürekli geliştiren, hayat boyu öğrenmeye adamış biriyim."
+              ? "I am a Computer Engineer and Software Developer who bridges the gap between complex engineering logic and elegant user interfaces. I create scalable, user-friendly solutions grounded in modern software architectures and engineering principles. Focused on crafting seamless digital experiences, I enjoy bringing static designs to life with fluid animations and responsive layouts. I am a lifelong learner and follow technology with passion, constantly refining my skills to build the web of tomorrow."
+              : "Karmaşık mühendislik mantığı ile zarif kullanıcı arayüzleri arasında köprü kuran bir Bilgisayar Mühendisi ve Yazılım Geliştiricisiyim. Modern yazılım mimarileri ve mühendislik prensiplerine dayalı, ölçeklenebilir ve kullanıcı dostu çözümler üretiyorum. Akıcı dijital deneyimler tasarlamaya odaklanarak, statik tasarımları akıcı animasyonlar ve duyarlı düzenlerle hayata geçirmekten keyif alıyorum. Teknolojiyi tutkuyla takip eden, yarının web dünyasını inşa etmek için becerilerini sürekli geliştiren, hayat boyu öğrenmeye adamış biriyim."
             }
           </p>
           
-          {/* SOCIAL ICONS (Değişmedi) */}
+          {/* SOCIAL ICONS */}
           <div className="flex justify-center md:justify-start gap-6 mb-8 animate-fade-up delay-500">
             <a href="https://github.com/eyup-fidan" target="_blank" className="p-4 bg-slate-800/50 border border-slate-700 rounded-full hover:bg-slate-700 hover:text-white hover:-translate-y-1 transition-all text-2xl text-slate-300">
               <FaGithub />

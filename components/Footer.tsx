@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
       <div className="container mx-auto px-6 flex flex-col items-center justify-center">
         
-        {/* 1. LOGO / İSİM - En Üstte ve Gösterişli */}
+        {/* 1. LOGO / İSİM */}
         <div 
           className="text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer mb-8 hover:opacity-80 transition-opacity" 
           onClick={scrollToTop}
@@ -22,7 +22,7 @@ export default function Footer() {
           EYÜP FİDAN
         </div>
 
-        {/* 2. SOSYAL İKONLAR - Yazının Üstünde */}
+        {/* 2. SOSYAL İKONLAR */}
         <div className="flex gap-8 mb-8">
             <a 
               href="https://www.linkedin.com/in/ey%C3%BCp-fidan-114386220/" 
@@ -58,11 +58,11 @@ export default function Footer() {
             </a>
         </div>
 
-        {/* Ayırıcı Çizgi (Premium hissi verir) */}
+        {/* Ayırıcı Çizgi */}
         <div className="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent mb-8"></div>
 
-        {/* 3. TELİF HAKKI - En Altta */}
-        <p className="text-slate-500 text-sm text-center">
+        {/* 3. TELİF HAKKI */}
+        <p className="text-white text-sm text-center">
             {language === 'en' 
              ? "© 2025 Eyüp Fidan. All rights reserved." 
              : "© 2025 Eyüp Fidan. Tüm hakları saklıdır."

@@ -50,7 +50,7 @@ export default function Skills() {
               key={category.id}
               className={`bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 group animate-fade-up ${delayClasses[index]}`}
             >
-              {/* Başlık Rengi : Mavi (text-blue-400) */}
+              {/* Başlık Rengi : Mavi */}
               <h3 className="text-xl font-bold mb-4 text-blue-400 transition-colors">
                 {category.title}
               </h3>
