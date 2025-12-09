@@ -11,7 +11,7 @@ export default function Projects() {
   const projectData = [
     {
       id: 1,
-      imageSrc: "/ÜrünYönetim.jpg", 
+      imageSrc: "/ProductManangementSystem.jpg", 
       title: language === 'en' ? "E-Commerce Application" : "E-Ticaret Uygulaması", 
       description: language === 'en' 
         ? "A modern e-commerce platform built with Next.js. Features include cart management, payment integration, and user auth."
@@ -60,39 +60,37 @@ export default function Projects() {
              <div key={project.id} className="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:shadow-blue-500/20 hover:shadow-xl transition-all group flex flex-col">
              
              {/* --- GÖRSEL ALANI --- */}
-             <div className="relative h-48 w-full bg-slate-800 overflow-hidden">
+             <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
                <Image 
                  src={project.imageSrc} 
                  alt={project.title}
                  fill
                  quality={100}
                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                 className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                 // DÜZELTME: 'object-contain' yerine 'object-cover' yaptık (Alanı doldurur).
+                 // 'object-top' ekli (Resmin en üstünü hizalar).
+                 className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                  onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none'; // Resmi gizle
+                    target.style.display = 'none'; 
                  }}
                />
+               
                {/* Resim Yüklenmezse Arkada Gözükecek Yazı */}
                <div className="absolute inset-0 bg-slate-800 -z-10 flex items-center justify-center text-slate-600 text-xs text-center p-4">
                   Resim Bulunamadı: {project.imageSrc}
-                  <br/>
-                  (public klasörünü kontrol et)
                </div>
              </div>
              
              <div className="p-6 flex flex-col flex-grow">
-               {/* Başlık (Sabit Mavi) */}
                <h3 className="text-xl font-bold mb-2 text-blue-400 transition-colors">
                  {project.title}
                </h3>
                
-               {/* Açıklama */}
                <p className="text-slate-200 text-sm mb-4 flex-grow">
                   {project.description}
                </p>
                
-               {/* Teknolojiler */}
                <div className="flex flex-wrap gap-2 mb-6">
                  {project.techs.map((tech, index) => (
                    <span key={index} className="text-xs px-2 py-1 bg-slate-800 border border-slate-700 rounded text-blue-300 font-medium">
@@ -101,7 +99,6 @@ export default function Projects() {
                  ))}
                </div>
                
-               {/* Linkler */}
                <div className="flex justify-between items-center mt-auto pt-4 border-t border-slate-800">
                   <a href={project.codeLink} target="_blank" className="text-sm font-medium hover:text-blue-400 flex items-center gap-1 text-slate-300 transition-colors">
                     <FaGithub /> {language === 'en' ? "Code" : "Kod"}
