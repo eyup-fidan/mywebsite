@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { MdLanguage } from 'react-icons/md';
-// DÜZELTME 1: Dosya yolu garanti olsun diye '../' olarak değiştirildi
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
@@ -48,7 +47,7 @@ export default function Navbar() {
             onClick={toggleLanguage}
             className="flex items-center gap-2 px-3 py-1 rounded-full border border-slate-700 hover:border-blue-500 hover:text-blue-400 transition-all text-sm font-semibold group"
           >
-            {/* DÜZELTME 2: İkonu span içine aldık, class'ı span'a verdik */}
+            
             <span className="text-xl group-hover:rotate-180 transition-transform duration-500 flex items-center">
                 <MdLanguage />
             </span>

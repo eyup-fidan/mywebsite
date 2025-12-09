@@ -51,7 +51,7 @@ export default function Projects() {
             </span>
         </h2>
         
-        {/* Grid Yapısı - Boşluklar (gap) azaltıldı: gap-6 */}
+        {/* Grid Yapısı */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectData.map((project) => (
              <div key={project.id} className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 group flex flex-col h-full transform hover:-translate-y-2">
@@ -73,20 +73,20 @@ export default function Projects() {
                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
              </div>
              
-             {/* Kart İçeriği - Padding p-6 (Kompakt) */}
+             {/* Kart İçeriği */}
              <div className="p-6 flex flex-col flex-grow relative">
                
-               {/* Başlık (Sabit Mavi) */}
+               {/* Başlık */}
                <h3 className="text-xl font-bold mb-3 text-blue-400 transition-colors">
                  {project.title}
                </h3>
                
-               {/* Açıklama (Sabit Beyaz) - Alt boşluk mb-4 */}
+               {/* Açıklama */}
                <p className="text-slate-200 text-sm mb-4 leading-relaxed min-h-[80px]">
                   {project.description}
                </p>
                
-               {/* Teknolojiler - Alt boşluk mb-6 */}
+               
                <div className="flex flex-wrap gap-2 mb-6">
                  {project.techs.map((tech, index) => (
                    <span 
@@ -98,17 +98,15 @@ export default function Projects() {
                  ))}
                </div>
                
-               {/* --- ALT KISIM (Footer) --- */}
+               {/* --- Footer --- */}
                <div className="mt-auto pt-5 border-t border-slate-800/50 flex items-center justify-between">
                   
                   {/* SOL: GitHub İkonu (Hover Efekti Eklendi) */}
                   <div className="p-2.5 bg-slate-800 rounded-full text-white text-lg shadow-lg border border-slate-700 flex items-center justify-center opacity-90 cursor-default transition-all duration-300 hover:bg-slate-700 hover:text-slate-300 hover:border-slate-600">
                     <FaGithub />
                   </div>
-
-                  {/* SAĞ: Durum Belirteçleri (Hover Eklendi) */}
                   
-                  {/* DURUM 1: Geliştiriliyor */}
+                  {/* Geliştiriliyor */}
                   {project.status === 'dev' && (
                     <div className="px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full shadow-[0_0_10px_rgba(245,158,11,0.1)] transition-all duration-300 cursor-default hover:bg-amber-500/20 hover:border-amber-500/40 hover:shadow-amber-500/30 hover:-translate-y-0.5">
                         <span className="text-[10px] font-bold text-amber-400 tracking-wide uppercase">
@@ -117,7 +115,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* DURUM 2: Yakında */}
+                  {/* Yakında */}
                   {project.status === 'soon' && (
                     <div className="px-3 py-1.5 bg-blue-600/10 border border-blue-500/20 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.1)] transition-all duration-300 cursor-default hover:bg-blue-600/20 hover:border-blue-500/40 hover:shadow-blue-500/30 hover:-translate-y-0.5">
                         <span className="text-[10px] font-bold text-blue-300 tracking-wide uppercase bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
