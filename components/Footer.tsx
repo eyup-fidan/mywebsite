@@ -11,7 +11,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
+    // DEĞİŞİKLİK: 'pt-16' yerine 'pt-8' yapıldı.
+    // Bu işlem, üstteki çizgi ile "EYÜP FİDAN" yazısı arasındaki boşluğu yarı yarıya azalttı.
+    <footer className="bg-slate-950 border-t border-slate-900 pt-8 pb-8">
       <div className="container mx-auto px-6 flex flex-col items-center justify-center">
         
         {/* 1. LOGO / İSİM */}

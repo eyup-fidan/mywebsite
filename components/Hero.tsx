@@ -9,7 +9,10 @@ export default function Hero() {
   const { language } = useLanguage();
 
   return (
-    <section id="about" className="pt-36 md:pt-28 min-h-[calc(100vh-6rem)] flex items-center justify-center">
+    // DEĞİŞİKLİK: 'min-h-[calc(100vh-6rem)]' kaldırıldı.
+    // Yerine 'pt-40 pb-20 md:pt-48 md:pb-32' gibi sabit boşluklar eklendi.
+    // Bu sayede zoom yapıldığında boşluklar aşırı büyümeyecek, düzenli kalacak.
+    <section id="about" className="pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center">
       
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20">
         
