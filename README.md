@@ -112,9 +112,9 @@ I am always open to discussing new projects, creative ideas, or opportunities to
 
 Email: fidaneyup76@gmail.com
 
-LinkedIn: https://www.linkedin.com/in/ey%C3%BCp-fidan-114386220/
+LinkedIn: Eyüp Fidan
 
-GitHub: https://github.com/eyup-fidan
+GitHub: @eyup-fidan
 
 <div align="center">
 <p>© 2025 Eyüp Fidan. All rights reserved.</p>
