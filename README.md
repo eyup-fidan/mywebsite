@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Eyüp Fidan | Personal Portfolio Website
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+</div>
 
-```bash
+<br />
+
+About The Project
+
+This project is a high-performance, responsive, and bilingual Personal Portfolio Website designed to showcase my skills, projects, and professional background as a Software Developer & Computer Engineer.
+
+Built with Next.js 14 (App Router) and styled with Tailwind CSS, the site features a premium dark aesthetic, smooth animations, and a seamless user experience across all devices.
+
+Key Features
+
+Bilingual Support: Fully integrated English/Turkish language toggle using React Context API (LanguageContext).
+
+Premium UI/UX: Modern dark theme with glassmorphism effects, gradient borders, and glowing animations.
+
+Fully Responsive: Mobile-first architecture ensuring perfect layout on phones, tablets, and desktops.
+
+High Performance: Optimized with Next.js Image component and lightweight code structure.
+
+Secure Contact: Static mailto integration to prevent spam and ensure direct communication without backend vulnerabilities.
+
+Modular Component Architecture: Clean and maintainable code structure (Hero, Skills, Projects, Contact).
+
+Visual Tour
+
+1. Hero Section
+
+A captivating introduction with glowing effects and social media integration.
+
+2. My Skills
+
+Categorized technical skills (Frontend, Backend, AI) presented in interactive cards.
+
+3. Projects Showcase
+
+A detailed display of my recent works with status badges (Under Development / Coming Soon).
+
+4. Contact Area
+
+A sleek, secure, and static contact section with premium hover effects.
+
+5. Footer
+
+Minimalist and functional footer with quick navigation.
+
+Tech Stack
+
+Category
+
+Technologies
+
+Framework
+
+Next.js 14 (App Router)
+
+Core
+
+React.js, TypeScript
+
+Styling
+
+Tailwind CSS, CSS Modules
+
+Icons
+
+React Icons (FontAwesome, Material Design)
+
+State Management
+
+React Context API (Custom Language Provider)
+
+Deployment
+
+Vercel (Recommended)
+
+Getting Started
+
+To run this project locally, follow these steps:
+
+Clone the repository
+
+git clone [https://github.com/eyup-fidan/mywebsite.git](https://github.com/eyup-fidan/mywebsite.git)
+
+
+Navigate to the project directory
+
+cd mywebsite
+
+
+Install dependencies
+
+npm install
+# or
+yarn install
+
+
+Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contact
 
-## Learn More
+I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
 
-To learn more about Next.js, take a look at the following resources:
+Email: fidaneyup76@gmail.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+LinkedIn: https://www.linkedin.com/in/ey%C3%BCp-fidan-114386220/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+GitHub: https://github.com/eyup-fidan
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+<p>© 2025 Eyüp Fidan. All rights reserved.</p>
+<p>Built with Next.js</p>
+</div>
