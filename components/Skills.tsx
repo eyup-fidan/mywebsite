@@ -35,7 +35,7 @@ export default function Skills() {
   const delayClasses = ['delay-100', 'delay-200', 'delay-300'];
 
   return (
-    <section id="skills" className="py-20 scroll-mt-24">
+    <section id="skills" className="pt-10 pb-20 scroll-mt-24">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         
         <h2 className="text-3xl font-bold text-center mb-16 animate-fade-up">

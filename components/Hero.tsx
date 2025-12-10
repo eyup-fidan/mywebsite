@@ -9,8 +9,7 @@ export default function Hero() {
   const { language } = useLanguage();
 
   return (
-    
-    <section id="about" className="pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center">
+    <section id="about" className="pt-28 pb-20 md:pt-36 md:pb-32 flex items-center justify-center">
       
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20">
         
