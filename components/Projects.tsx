@@ -16,7 +16,8 @@ export default function Projects() {
         ? "A modern e-commerce platform built with Next.js. Features include cart management, payment integration, and user auth."
         : "Next.js ile geliştirilmiş modern bir e-ticaret platformu. Sepet yönetimi, ödeme entegrasyonu ve kullanıcı girişi özelliklerini içerir.",
       techs: ["Next.js", "Tailwind CSS", "React", "TypeScript", "Responsive Design"],
-      status: "dev"
+      status: "dev",
+      githubUrl: "https://github.com/eyup-fidan/E-Commerce-Application" 
     },
     {
       id: 2,
@@ -98,13 +99,25 @@ export default function Projects() {
                  ))}
                </div>
                
-               {/* --- Footer --- */}
+               {/* Footer */}
                <div className="mt-auto pt-5 border-t border-slate-800/50 flex items-center justify-between">
                   
-                  {/* SOL: GitHub İkonu (Hover Efekti Eklendi) */}
-                  <div className="p-2.5 bg-slate-800 rounded-full text-white text-lg shadow-lg border border-slate-700 flex items-center justify-center opacity-90 cursor-default transition-all duration-300 hover:bg-slate-700 hover:text-slate-300 hover:border-slate-600">
-                    <FaGithub />
-                  </div>
+                  
+                  {project.githubUrl ? (
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      
+                      className="p-2.5 bg-slate-800 rounded-full text-white text-lg shadow-lg border border-slate-700 flex items-center justify-center opacity-90 transition-all duration-300 hover:bg-gray-700 hover:text-white hover:border-gray-500 hover:shadow-gray-500/30 cursor-pointer"
+                    >
+                      <FaGithub />
+                    </a>
+                  ) : (
+                    <div className="p-2.5 bg-slate-800 rounded-full text-white text-lg shadow-lg border border-slate-700 flex items-center justify-center opacity-50 cursor-default transition-all duration-300">
+                      <FaGithub />
+                    </div>
+                  )}
                   
                   {/* Geliştiriliyor */}
                   {project.status === 'dev' && (
